@@ -5,8 +5,17 @@ class OnBoarding extends StatelessWidget {
   static String id = "onboarding";
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 200,
+            width: width * .9,
+            child: Image.asset("assets/images/onboardingImages/1.PNG"),
+          ),
+        ],
+      ),
     );
   }
 }
