@@ -1,3 +1,4 @@
+import 'package:chat_app1/constant.dart/styles%20copy.dart';
 import 'package:flutter/material.dart';
 
 class OnBoarding extends StatelessWidget {
@@ -13,6 +14,18 @@ class OnBoarding extends StatelessWidget {
             height: 200,
             width: width * .9,
             child: Image.asset("assets/images/onboardingImages/1.PNG"),
+          ),
+          Text(
+            "Chat anytime , anyware",
+            style: Styles.textStyle25,
+          ),
+          SizedBox(height: 20),
+          Opacity(
+            opacity: .4,
+            child: Text(
+              "PAssing for any information on any screen , any device instaly is mode simple at its subtime",
+              style: Styles.textStyle16,
+            ),
           ),
         ],
       ),
