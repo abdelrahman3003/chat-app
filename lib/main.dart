@@ -5,6 +5,7 @@ import 'package:chat_app1/firebase_options.dart';
 import 'package:chat_app1/pages/screens/chat.dart';
 import 'package:chat_app1/pages/screens/chat2.dart';
 import 'package:chat_app1/pages/screens/login.dart';
+import 'package:chat_app1/pages/screens/onboarding.dart';
 import 'package:chat_app1/pages/screens/signup.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -42,9 +43,10 @@ class ScholarChat extends StatelessWidget {
           Signup.id: (context) => Signup(),
           Chat.id: (context) => Chat(),
           chat2.id: (context) => chat2(),
+          OnBoarding.id: (context) => const OnBoarding(),
         },
         debugShowCheckedModeBanner: false,
-        initialRoute: Login.id,
+        initialRoute: OnBoarding.id,
       ),
     );
   }
