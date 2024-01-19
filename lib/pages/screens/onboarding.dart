@@ -1,4 +1,6 @@
+import 'package:chat_app1/pages/widgets/onboarding/onboarding_buttton.dart';
 import 'package:chat_app1/pages/widgets/onboarding/pageview_onboard.dart';
+import 'package:chat_app1/pages/widgets/onboarding/spotes.dart';
 import 'package:flutter/material.dart';
 
 class OnBoarding extends StatelessWidget {
@@ -11,6 +13,8 @@ class OnBoarding extends StatelessWidget {
       children: [
         SizedBox(height: 150),
         Expanded(child: PageViewOnboarding()),
+        Spotes(),
+        OnboardingButton()
       ],
     ));
   }
