@@ -13,6 +13,7 @@ class PageViewOnboarding extends StatelessWidget {
       itemBuilder: (context, index) {
         return Column(
           children: [
+            const SizedBox(height: 150),
             SizedBox(
               height: 200,
               width: width * .9,

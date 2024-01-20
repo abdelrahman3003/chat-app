@@ -9,6 +9,7 @@ class Spotes extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 7,
+      width: 40,
       child: ListView.builder(
         itemCount: onboadingList.length,
         scrollDirection: Axis.horizontal,

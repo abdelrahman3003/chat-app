@@ -8,14 +8,22 @@ class OnBoarding extends StatelessWidget {
   static String id = "onboarding";
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: Column(
-      children: [
-        SizedBox(height: 150),
-        Expanded(child: PageViewOnboarding()),
-        Spotes(),
-        OnboardingButton()
-      ],
-    ));
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+                height: MediaQuery.of(context).size.height * .8,
+                child: const PageViewOnboarding()),
+            const Spotes(),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: OnboardingButton(),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
