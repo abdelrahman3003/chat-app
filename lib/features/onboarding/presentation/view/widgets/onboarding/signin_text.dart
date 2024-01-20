@@ -21,7 +21,8 @@ class Signin_Text extends StatelessWidget {
             onTap: () {},
             child: Text(
               "SIGN IN",
-              style: Styles.textStyle20.copyWith(color: Constant.kprimaryColor),
+              style:
+                  Styles.textStyle20.copyWith(color: Constant.kprimaryColor1),
             )),
       ],
     );

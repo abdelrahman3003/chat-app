@@ -5,21 +5,24 @@ import 'package:flutter/material.dart';
 class AuthField extends StatelessWidget {
   const AuthField({
     super.key,
+    required this.text,
+    required this.icon,
   });
+  final String text;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(children: [
-      Positioned(
-        top: -9,
-        child: TextfieldAuth(
-          text: "username",
-        ),
+    return Stack(children: [
+      TextfieldAuth(
+        text: text,
       ),
       Positioned(
         left: .5,
-        child: IconAuth(),
         top: -10,
+        child: IconAuth(
+          icon: icon,
+        ),
       )
     ]);
   }

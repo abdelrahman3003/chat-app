@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class IconAuth extends StatelessWidget {
-  const IconAuth({super.key});
-
+  const IconAuth({super.key, required this.icon});
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,7 +20,7 @@ class IconAuth extends StatelessWidget {
           ],
           color: Colors.white),
       child: Icon(
-        Icons.person,
+        icon,
         color: Colors.blue,
       ),
     );

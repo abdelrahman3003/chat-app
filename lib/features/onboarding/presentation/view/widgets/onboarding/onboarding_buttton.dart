@@ -15,7 +15,7 @@ class OnboardingButton extends StatelessWidget {
     return BlocBuilder<OnboardingCubit, OnboardingState>(
       builder: (context, state) {
         return CustomButtom(
-          backgroundcolor: Constant.kprimaryColor,
+          backgroundcolor: Constant.kprimaryColor1,
           textcolor: Colors.white,
           borderRadius: BorderRadius.circular(20),
           text: BlocProvider.of<OnboardingCubit>(context).isfinish
