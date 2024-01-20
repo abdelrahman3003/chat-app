@@ -1,5 +1,6 @@
 import 'package:chat_app1/pages/widgets/onboarding/onboarding_buttton.dart';
 import 'package:chat_app1/pages/widgets/onboarding/pageview_onboard.dart';
+import 'package:chat_app1/pages/widgets/onboarding/signin_text.dart';
 import 'package:chat_app1/pages/widgets/onboarding/spotes.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +19,11 @@ class OnBoarding extends StatelessWidget {
             const Spotes(),
             const SizedBox(height: 20),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: EdgeInsets.all(15),
               child: OnboardingButton(),
-            )
+            ),
+            const Signin_Text(),
+            const SizedBox(height: 16),
           ],
         ),
       ),
