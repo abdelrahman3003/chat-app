@@ -1,8 +1,7 @@
-import 'package:chat_app1/features/auth/presentarion/view/widgets/auth_button.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/loginsectionfeild.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/dividertext.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/icons.dart';
-import 'package:chat_app1/features/auth/presentarion/view/widgets/logg.dart';
+import 'package:chat_app1/features/auth/presentarion/view/widgets/logo.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/textsection.dart';
 import 'package:flutter/material.dart';
 
@@ -22,8 +21,6 @@ class SigninBody extends StatelessWidget {
           TextsSections(),
           SizedBox(height: 25),
           LoginSectionFields(),
-          SizedBox(height: 20),
-          AuthButton(),
           SizedBox(height: 20),
           DividerText(),
           IconsMeida(),

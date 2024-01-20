@@ -7,14 +7,16 @@ class AuthField extends StatelessWidget {
     super.key,
     required this.text,
     required this.icon,
+    required this.onsave,
   });
   final String text;
   final IconData icon;
-
+  final void Function(String?) onsave;
   @override
   Widget build(BuildContext context) {
     return Stack(clipBehavior: Clip.none, children: [
       TextfieldAuth(
+        onsave: onsave,
         text: text,
       ),
       Positioned(
