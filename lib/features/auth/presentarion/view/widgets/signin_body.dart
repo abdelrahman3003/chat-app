@@ -1,9 +1,9 @@
-import 'package:chat_app1/features/signin/presentarion/view/widgets/auth_button.dart';
-import 'package:chat_app1/features/signin/presentarion/view/widgets/authllsitfeild.dart';
-import 'package:chat_app1/features/signin/presentarion/view/widgets/dividertext.dart';
-import 'package:chat_app1/features/signin/presentarion/view/widgets/icons.dart';
-import 'package:chat_app1/features/signin/presentarion/view/widgets/logg.dart';
-import 'package:chat_app1/features/signin/presentarion/view/widgets/textsection.dart';
+import 'package:chat_app1/features/auth/presentarion/view/widgets/auth_button.dart';
+import 'package:chat_app1/features/auth/presentarion/view/widgets/loginsectionfeild.dart';
+import 'package:chat_app1/features/auth/presentarion/view/widgets/dividertext.dart';
+import 'package:chat_app1/features/auth/presentarion/view/widgets/icons.dart';
+import 'package:chat_app1/features/auth/presentarion/view/widgets/logg.dart';
+import 'package:chat_app1/features/auth/presentarion/view/widgets/textsection.dart';
 import 'package:flutter/material.dart';
 
 class SigninBody extends StatelessWidget {
@@ -21,7 +21,7 @@ class SigninBody extends StatelessWidget {
           ),
           TextsSections(),
           SizedBox(height: 25),
-          AuthListField(),
+          LoginSectionFields(),
           SizedBox(height: 20),
           AuthButton(),
           SizedBox(height: 20),

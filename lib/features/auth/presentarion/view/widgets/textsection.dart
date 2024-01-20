@@ -9,13 +9,13 @@ class TextsSections extends StatelessWidget {
     return const Column(
       children: [
         Text(
-          "Welcom! back,",
+          "Welcom!",
           style: Styles.textStyle25,
         ),
         Opacity(
           opacity: .4,
           child: Text(
-            "Login in your account",
+            "Create your account",
             style: Styles.textStyle16,
           ),
         ),

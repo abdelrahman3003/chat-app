@@ -1,4 +1,4 @@
-import 'package:chat_app1/features/signin/presentarion/view/widgets/signin_body.dart';
+import 'package:chat_app1/features/auth/presentarion/view/widgets/signin_body.dart';
 import 'package:flutter/material.dart';
 
 class Signin extends StatelessWidget {

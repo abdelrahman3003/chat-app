@@ -1,5 +1,5 @@
-import 'package:chat_app1/features/signin/presentarion/view/widgets/iconauth.dart';
-import 'package:chat_app1/features/signin/presentarion/view/widgets/textfiledauth.dart';
+import 'package:chat_app1/features/auth/presentarion/view/widgets/iconauth.dart';
+import 'package:chat_app1/features/auth/presentarion/view/widgets/textfiledauth.dart';
 import 'package:flutter/material.dart';
 
 class AuthField extends StatelessWidget {

@@ -12,7 +12,7 @@ class AuthButton extends StatelessWidget {
     return CustomButtom(
         backgroundcolor: Constant.kprimaryColor2,
         textcolor: Colors.white,
-        text: "Login",
+        text: "SignUP",
         width: 120,
         borderRadius: BorderRadius.circular(30),
         onPressed: () {});
