@@ -1,6 +1,8 @@
 import 'package:chat_app1/constant.dart/styles%20copy.dart';
+import 'package:chat_app1/cubit/onboarding/onboarding_cubit.dart';
 import 'package:chat_app1/models/onboarding.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PageViewOnboarding extends StatelessWidget {
   const PageViewOnboarding({super.key});
@@ -9,8 +11,16 @@ class PageViewOnboarding extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return PageView.builder(
+      controller: BlocProvider.of<OnboardingCubit>(context).pageController,
       itemCount: onboadingList.length,
       itemBuilder: (context, index) {
+        BlocProvider.of<OnboardingCubit>(context).pageIndex(index);
+        if (index == onboadingList.length - 1) {
+          BlocProvider.of<OnboardingCubit>(context).isfinish = true;
+        } else {
+          BlocProvider.of<OnboardingCubit>(context).isfinish = false;
+        }
+
         return Column(
           children: [
             const SizedBox(height: 150),
