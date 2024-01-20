@@ -14,11 +14,11 @@ abstract class RoutesApp {
       builder: (context, state) => const OnBoarding(),
     ),
     GoRoute(
-      path: ksignin,
+      path: "/",
       builder: (context, state) => const Signin(),
     ),
     GoRoute(
-      path: "/",
+      path: ksignup,
       builder: (context, state) => const Signup(),
     ),
   ]);

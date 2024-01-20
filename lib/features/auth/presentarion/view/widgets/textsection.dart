@@ -2,20 +2,21 @@ import 'package:chat_app1/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class TextsSections extends StatelessWidget {
-  const TextsSections({super.key});
-
+  const TextsSections({super.key, required this.title, required this.subtitle});
+  final String title;
+  final String subtitle;
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         Text(
-          "Welcom!",
+          title,
           style: Styles.textStyle25,
         ),
         Opacity(
           opacity: .4,
           child: Text(
-            "Create your account",
+            subtitle,
             style: Styles.textStyle16,
           ),
         ),
