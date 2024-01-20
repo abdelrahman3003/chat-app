@@ -1,8 +1,7 @@
-import 'package:chat_app1/cubit/onboarding/onboarding_cubit.dart';
+import 'package:chat_app1/features/onboarding/data/model/onboarding.dart';
+import 'package:chat_app1/features/onboarding/presentation/manager/onboarding/onboarding_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../models/onboarding.dart';
 
 class Spotes extends StatelessWidget {
   const Spotes({super.key});

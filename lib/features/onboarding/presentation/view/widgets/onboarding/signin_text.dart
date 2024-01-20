@@ -1,5 +1,5 @@
-import 'package:chat_app1/constant.dart/constant.dart';
-import 'package:chat_app1/constant.dart/styles%20copy.dart';
+import 'package:chat_app1/constants.dart';
+import 'package:chat_app1/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class Signin_Text extends StatelessWidget {
@@ -21,7 +21,7 @@ class Signin_Text extends StatelessWidget {
             onTap: () {},
             child: Text(
               "SIGN IN",
-              style: Styles.textStyle20.copyWith(color: kprimaryColor),
+              style: Styles.textStyle20.copyWith(color: Constant.kprimaryColor),
             )),
       ],
     );

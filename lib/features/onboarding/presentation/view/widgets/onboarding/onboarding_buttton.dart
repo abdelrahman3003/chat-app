@@ -1,5 +1,6 @@
-import 'package:chat_app1/components/custombutton.dart';
-import 'package:chat_app1/cubit/onboarding/onboarding_cubit.dart';
+import 'package:chat_app1/constants.dart';
+import 'package:chat_app1/core/widgets/customButton.dart';
+import 'package:chat_app1/features/onboarding/presentation/manager/onboarding/onboarding_cubit.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,11 +14,14 @@ class OnboardingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<OnboardingCubit, OnboardingState>(
       builder: (context, state) {
-        return custombutton(
-          bottunname: BlocProvider.of<OnboardingCubit>(context).isfinish
+        return CustomButtom(
+          backgroundcolor: Constant.kprimaryColor,
+          textcolor: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          text: BlocProvider.of<OnboardingCubit>(context).isfinish
               ? "Get Start"
               : "Continue",
-          ontap: () {
+          onPressed: () {
             BlocProvider.of<OnboardingCubit>(context).next();
           },
         );

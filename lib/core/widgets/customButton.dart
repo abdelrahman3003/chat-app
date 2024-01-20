@@ -1,5 +1,4 @@
-import 'package:chat_app1/constant.dart/constant.dart';
-import 'package:chat_app1/constant.dart/styles%20copy.dart';
+import 'package:chat_app1/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -7,37 +6,37 @@ class CustomButtom extends StatelessWidget {
   CustomButtom(
       {super.key,
       required this.backgroundcolor,
+      required this.textcolor,
       required this.text,
       this.borderRadius,
       required this.onPressed,
-      this.height = 27,
-      this.width = 65});
+      this.width = double.infinity,
+      this.fontSizetext = 20});
   final Color backgroundcolor;
-  final double height;
-  final double width;
+  final Color textcolor;
   final Function()? onPressed;
   BorderRadius? borderRadius;
   final String text;
+  final double width;
+  final double fontSizetext;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height,
+      height: 48,
       width: width,
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
           backgroundColor: backgroundcolor,
           shape: RoundedRectangleBorder(
-              borderRadius: borderRadius ?? BorderRadius.circular(25)),
+              borderRadius: borderRadius ?? BorderRadius.circular(10)),
         ),
         child: Text(
           text,
-          style: Styles.textStyle14.copyWith(
-            color:
-                backgroundcolor == kprimaryColor ? Colors.white : Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: width == 65 ? 11 : 20,
-          ),
+          style: Styles.textStyle16.copyWith(
+              color: textcolor,
+              fontWeight: FontWeight.bold,
+              fontSize: fontSizetext),
         ),
       ),
     );
