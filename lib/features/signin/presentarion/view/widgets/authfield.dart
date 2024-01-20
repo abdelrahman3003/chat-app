@@ -13,7 +13,7 @@ class AuthField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
+    return Stack(clipBehavior: Clip.none, children: [
       TextfieldAuth(
         text: text,
       ),
