@@ -19,15 +19,14 @@ class ScholarChat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => OnboardingCubit(),
-        ),
-      ],
-      child: MaterialApp.router(
-        routerConfig: RoutesApp.router,
-        debugShowCheckedModeBanner: false,
-      ),
-    );
+        providers: [
+          BlocProvider(
+            create: (context) => OnboardingCubit(),
+          ),
+        ],
+        child: MaterialApp.router(
+          routerConfig: RoutesApp.router,
+          debugShowCheckedModeBanner: false,
+        ));
   }
 }
