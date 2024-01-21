@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class TextFormfieldChat extends StatelessWidget {
   const TextFormfieldChat({
     super.key,
+    required this.onSaved,
   });
-
+  final Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -24,7 +25,7 @@ class TextFormfieldChat extends StatelessWidget {
               ],
             ),
             child: TextFormField(
-              onSaved: (value) {},
+              onSaved: onSaved,
               decoration: InputDecoration(
                 prefix: const SizedBox(width: 30),
                 hintText: "Type",
