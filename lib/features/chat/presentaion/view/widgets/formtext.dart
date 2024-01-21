@@ -2,8 +2,8 @@ import 'package:chat_app1/features/auth/presentarion/view/widgets/iconauth.dart'
 import 'package:chat_app1/features/chat/presentaion/view/widgets/textformfiledchat.dart';
 import 'package:flutter/material.dart';
 
-class TextForm extends StatelessWidget {
-  const TextForm({
+class TextFormBody extends StatelessWidget {
+  const TextFormBody({
     super.key,
   });
 

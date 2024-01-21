@@ -9,14 +9,14 @@ class TextFormfieldChat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const SizedBox(width: 60),
+        const SizedBox(width: 10),
         Container(
-            width: 250,
+            width: 300,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30.0),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.blue.withOpacity(0.14),
+                  color: Colors.blue.withOpacity(0.3),
                   spreadRadius: 2,
                   blurRadius: 1,
                   offset: Offset(0, 1),
@@ -24,16 +24,10 @@ class TextFormfieldChat extends StatelessWidget {
               ],
             ),
             child: TextFormField(
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
               onSaved: (value) {},
               decoration: InputDecoration(
                 prefix: const SizedBox(width: 30),
-                hintText: "text",
+                hintText: "Type",
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(

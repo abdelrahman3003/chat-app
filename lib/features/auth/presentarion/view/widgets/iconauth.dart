@@ -16,7 +16,7 @@ class IconAuth extends StatelessWidget {
           borderRadius: BorderRadius.circular(50.0),
           boxShadow: [
             BoxShadow(
-              color: Colors.blue.withOpacity(0.25),
+              color: Colors.blue.withOpacity(0.4),
               spreadRadius: 2,
               blurRadius: 3,
               offset: const Offset(0, 3),

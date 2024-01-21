@@ -1,26 +1,45 @@
-import 'package:chat_app1/features/chat/data/model/message.dart';
+import 'package:chat_app1/constants.dart';
+import 'package:chat_app1/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class MessageFriend extends StatelessWidget {
-  const MessageFriend({super.key, required this.message});
-  final Message message;
+  const MessageFriend({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.topRight,
       child: Container(
-        margin: EdgeInsets.only(top: 8),
-        padding: const EdgeInsets.all(16),
-        decoration: const BoxDecoration(
-          color: Color(0xff006D84),
-          borderRadius: BorderRadius.only(
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
               bottomLeft: Radius.circular(20)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.blue.withOpacity(0.15),
+              spreadRadius: .3,
+              blurRadius: .3,
+              offset: Offset(0, 6),
+            ),
+          ],
         ),
-        child: Text(
-          message.message!,
-          style: const TextStyle(color: Colors.white, fontSize: 18),
+        child: Container(
+          margin: const EdgeInsets.only(top: 8),
+          padding: const EdgeInsets.all(16),
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+                bottomLeft: Radius.circular(20)),
+          ),
+          child: Text(
+            "message friend",
+            style: Styles.textStyle18.copyWith(color: Constant.kprimaryColor2),
+          ),
         ),
       ),
     );
