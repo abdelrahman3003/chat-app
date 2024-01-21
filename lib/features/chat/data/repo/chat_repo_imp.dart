@@ -6,13 +6,14 @@ class ChatRepoImp implements ChatRepo {
   CollectionReference messages =
       FirebaseFirestore.instance.collection("Messages");
   @override
-  void getMessage() {
+  List<Message> getMessage() {
+    List<Message> messageList = [];
     messages.orderBy("date", descending: true).snapshots().listen((event) {
-      List<Message> messageList = [];
       for (var doc in event.docs) {
         messageList.add(Message.fromjson(doc));
       }
     });
+    return messageList;
   }
 
   @override

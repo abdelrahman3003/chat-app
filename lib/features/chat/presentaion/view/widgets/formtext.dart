@@ -1,6 +1,9 @@
+import 'package:chat_app1/features/chat/data/model/message.dart';
+import 'package:chat_app1/features/chat/presentaion/manager/chat/chat_cubit.dart';
 import 'package:chat_app1/features/chat/presentaion/view/widgets/send_icon.dart';
 import 'package:chat_app1/features/chat/presentaion/view/widgets/textformfiledchat.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TextFormBody extends StatefulWidget {
   const TextFormBody({
@@ -13,7 +16,7 @@ class TextFormBody extends StatefulWidget {
 
 class _TextFormBodyState extends State<TextFormBody> {
   GlobalKey<FormState> formastae = GlobalKey<FormState>();
-  String text = "";
+  late Message message;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -21,7 +24,7 @@ class _TextFormBodyState extends State<TextFormBody> {
       child: Stack(clipBehavior: Clip.none, children: [
         TextFormfieldChat(
           onSaved: (value) {
-            text = value!;
+            message.message = value!;
           },
         ),
         Positioned(
@@ -30,6 +33,8 @@ class _TextFormBodyState extends State<TextFormBody> {
             child: SendIcon(
               onTap: () {
                 formastae.currentState!.save();
+                BlocProvider.of<ChatCubit>(context)
+                    .sendMessage(message: message.message!, id: message.id!);
               },
             )),
       ]),

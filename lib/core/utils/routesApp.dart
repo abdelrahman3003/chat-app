@@ -1,7 +1,9 @@
+import 'package:chat_app1/features/auth/presentarion/manager/chat_cubit/chat_cubit.dart';
 import 'package:chat_app1/features/auth/presentarion/view/signup.dart';
 import 'package:chat_app1/features/chat/presentaion/view/chat.dart';
 import 'package:chat_app1/features/onboarding/presentation/view/onboarding.dart';
 import 'package:chat_app1/features/auth/presentarion/view/signin.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class RoutesApp {
@@ -25,7 +27,10 @@ abstract class RoutesApp {
     ),
     GoRoute(
       path: "/",
-      builder: (context, state) => const Chat(),
+      builder: (context, state) => BlocProvider(
+        create: (context) => ChatCubit()..getMessage(),
+        child: const Chat(),
+      ),
     ),
   ]);
 }

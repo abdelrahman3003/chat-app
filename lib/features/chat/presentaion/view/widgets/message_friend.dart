@@ -1,12 +1,14 @@
 import 'package:chat_app1/constants.dart';
 import 'package:chat_app1/core/utils/styles.dart';
+import 'package:chat_app1/features/chat/data/model/message.dart';
 import 'package:flutter/material.dart';
 
 class MessageFriend extends StatelessWidget {
   const MessageFriend({
     super.key,
+    required this.message,
   });
-
+  final Message message;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -37,7 +39,7 @@ class MessageFriend extends StatelessWidget {
                 bottomLeft: Radius.circular(20)),
           ),
           child: Text(
-            "message friend",
+            message.message!,
             style: Styles.textStyle18.copyWith(color: Constant.kprimaryColor2),
           ),
         ),

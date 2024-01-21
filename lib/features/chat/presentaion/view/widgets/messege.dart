@@ -1,12 +1,14 @@
 import 'package:chat_app1/constants.dart';
 import 'package:chat_app1/core/utils/styles.dart';
+import 'package:chat_app1/features/chat/data/model/message.dart';
 import 'package:flutter/material.dart';
 
 class MessageUser extends StatelessWidget {
   const MessageUser({
     super.key,
+    required this.message,
   });
-
+  final Message message;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +37,7 @@ class MessageUser extends StatelessWidget {
               bottomRight: Radius.circular(20)),
         ),
         child: Text(
-          "message",
+          message.message!,
           style: Styles.textStyle18.copyWith(color: Colors.white),
         ),
       ),
