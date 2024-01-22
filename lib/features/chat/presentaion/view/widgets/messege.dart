@@ -8,37 +8,40 @@ class MessageUser extends StatelessWidget {
     super.key,
     required this.message,
   });
-  final Message message;
+  final String message;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-            bottomLeft: Radius.circular(20)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.blue.withOpacity(0.15),
-            spreadRadius: .3,
-            blurRadius: .3,
-            offset: const Offset(0, 6),
-          ),
-        ],
-      ),
+    return Align(
+      alignment: Alignment.topRight,
       child: Container(
-        margin: const EdgeInsets.only(top: 8),
-        padding: const EdgeInsets.all(16),
-        decoration: const BoxDecoration(
-          color: Constant.kprimaryColor2,
-          borderRadius: BorderRadius.only(
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
-              bottomRight: Radius.circular(20)),
+              bottomLeft: Radius.circular(20)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.blue.withOpacity(0.15),
+              spreadRadius: .3,
+              blurRadius: .3,
+              offset: const Offset(0, 6),
+            ),
+          ],
         ),
-        child: Text(
-          "message.message",
-          style: Styles.textStyle18.copyWith(color: Colors.white),
+        child: Container(
+          margin: const EdgeInsets.only(top: 8),
+          padding: const EdgeInsets.all(16),
+          decoration: const BoxDecoration(
+            color: Constant.kprimaryColor2,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+                bottomRight: Radius.circular(20)),
+          ),
+          child: Text(
+            message,
+            style: Styles.textStyle18.copyWith(color: Colors.white),
+          ),
         ),
       ),
     );

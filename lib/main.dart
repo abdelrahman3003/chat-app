@@ -24,9 +24,11 @@ class ScholarChat extends StatelessWidget {
             create: (context) => OnboardingCubit(),
           ),
         ],
-        child: MaterialApp.router(
-          routerConfig: RoutesApp.router,
-          debugShowCheckedModeBanner: false,
+        child: SafeArea(
+          child: MaterialApp.router(
+            routerConfig: RoutesApp.router,
+            debugShowCheckedModeBanner: false,
+          ),
         ));
   }
 }

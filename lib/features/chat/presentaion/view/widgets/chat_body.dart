@@ -11,15 +11,14 @@ class ChatBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return const Column(
       children: [
-        //   MessageUserList(messages: state.messageList),
-        //  MessagesFriendList(messages: state.messageList),
-        const SizedBox(height: 3),
-        const TextFormBody(),
-        const SizedBox(height: 5),
+        Expanded(
+          child: MessageUserList(messages: []),
+        ),
+        SizedBox(height: 10),
+        TextFormBody(),
+        SizedBox(height: 5),
       ],
     );
   }

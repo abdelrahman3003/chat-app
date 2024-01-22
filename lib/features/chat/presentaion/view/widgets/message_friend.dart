@@ -8,7 +8,7 @@ class MessageFriend extends StatelessWidget {
     super.key,
     required this.message,
   });
-  final Message message;
+  final String message;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -39,7 +39,7 @@ class MessageFriend extends StatelessWidget {
                 bottomLeft: Radius.circular(20)),
           ),
           child: Text(
-            "message.message",
+            message,
             style: Styles.textStyle18.copyWith(color: Constant.kprimaryColor2),
           ),
         ),
