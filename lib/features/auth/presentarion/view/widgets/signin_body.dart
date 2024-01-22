@@ -15,9 +15,7 @@ class SigninBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 100),
-          Logo(
-            image: "assets/images/logo/1.PNG",
-          ),
+          Logo(image: "assets/images/logo/1.PNG"),
           TextsSections(title: "Welcome back!", subtitle: "Login your account"),
           SizedBox(height: 25),
           LoginSectionFields(),

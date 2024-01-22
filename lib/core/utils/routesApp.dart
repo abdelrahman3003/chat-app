@@ -1,3 +1,5 @@
+import 'package:chat_app1/features/auth/data/repo/auth_repo/auth_repo_imp.dart';
+import 'package:chat_app1/features/auth/presentarion/manager/cubit/auth_cubit.dart';
 import 'package:chat_app1/features/auth/presentarion/view/signup.dart';
 import 'package:chat_app1/features/chat/data/repo/chat_repo_imp.dart';
 import 'package:chat_app1/features/chat/presentaion/manager/chat/chat_cubit.dart';
@@ -19,15 +21,21 @@ abstract class RoutesApp {
       builder: (context, state) => const OnBoarding(),
     ),
     GoRoute(
-      path: ksignin,
-      builder: (context, state) => const Signin(),
-    ),
-    GoRoute(
-      path: ksignin,
-      builder: (context, state) => const Signup(),
-    ),
-    GoRoute(
       path: "/",
+      builder: (context, state) => BlocProvider(
+        create: (context) => AuthCubit(AuthRepoImp()),
+        child: const Signin(),
+      ),
+    ),
+    GoRoute(
+      path: ksignup,
+      builder: (context, state) => BlocProvider(
+        create: (context) => AuthCubit(AuthRepoImp()),
+        child: const Signup(),
+      ),
+    ),
+    GoRoute(
+      path: kchat,
       builder: (context, state) => BlocProvider(
         create: (context) => ChatCubit(ChatRepoImp())..getMessage(),
         child: const Chat(),

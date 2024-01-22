@@ -17,7 +17,7 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   void signup(String username, String email, String password) async {
-    var result = authRepo.signUp(username, email, password);
+    var result = await authRepo.signUp(username, email, password);
     if (result == "Success") {
       emit(AuthSuccess());
     } else {
