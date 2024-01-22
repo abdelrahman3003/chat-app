@@ -7,6 +7,8 @@ class AuthRepoImp implements AuthRepo {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
+      await Future.delayed(const Duration(seconds: 2));
+      return "Success";
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         return 'No user found for that email.';
