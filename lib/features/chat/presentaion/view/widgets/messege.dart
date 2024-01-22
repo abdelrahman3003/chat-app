@@ -22,7 +22,7 @@ class MessageUser extends StatelessWidget {
             color: Colors.blue.withOpacity(0.15),
             spreadRadius: .3,
             blurRadius: .3,
-            offset: Offset(0, 6),
+            offset: const Offset(0, 6),
           ),
         ],
       ),
@@ -37,7 +37,7 @@ class MessageUser extends StatelessWidget {
               bottomRight: Radius.circular(20)),
         ),
         child: Text(
-          message.message!,
+          "message.message",
           style: Styles.textStyle18.copyWith(color: Colors.white),
         ),
       ),

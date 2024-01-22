@@ -24,7 +24,7 @@ class MessageFriend extends StatelessWidget {
               color: Colors.blue.withOpacity(0.15),
               spreadRadius: .3,
               blurRadius: .3,
-              offset: Offset(0, 6),
+              offset: const Offset(0, 6),
             ),
           ],
         ),
@@ -39,7 +39,7 @@ class MessageFriend extends StatelessWidget {
                 bottomLeft: Radius.circular(20)),
           ),
           child: Text(
-            message.message!,
+            "message.message",
             style: Styles.textStyle18.copyWith(color: Constant.kprimaryColor2),
           ),
         ),

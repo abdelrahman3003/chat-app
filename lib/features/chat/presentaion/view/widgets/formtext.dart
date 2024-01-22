@@ -1,4 +1,3 @@
-import 'package:chat_app1/features/chat/data/model/message.dart';
 import 'package:chat_app1/features/chat/presentaion/manager/chat/chat_cubit.dart';
 import 'package:chat_app1/features/chat/presentaion/view/widgets/send_icon.dart';
 import 'package:chat_app1/features/chat/presentaion/view/widgets/textformfiledchat.dart';
@@ -16,7 +15,8 @@ class TextFormBody extends StatefulWidget {
 
 class _TextFormBodyState extends State<TextFormBody> {
   GlobalKey<FormState> formastae = GlobalKey<FormState>();
-  late Message message;
+  TextEditingController controller = TextEditingController();
+  String text = "";
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -24,8 +24,9 @@ class _TextFormBodyState extends State<TextFormBody> {
       child: Stack(clipBehavior: Clip.none, children: [
         TextFormfieldChat(
           onSaved: (value) {
-            message.message = value!;
+            text = value!;
           },
+          controller: controller,
         ),
         Positioned(
             right: .5,
@@ -34,7 +35,11 @@ class _TextFormBodyState extends State<TextFormBody> {
               onTap: () {
                 formastae.currentState!.save();
                 BlocProvider.of<ChatCubit>(context)
-                    .sendMessage(message: message.message!, id: message.id!);
+                    .sendMessage(message: text, id: "abdou@gmail.com");
+                setState(() {
+                  controller.clear();
+                  text = '';
+                });
               },
             )),
       ]),

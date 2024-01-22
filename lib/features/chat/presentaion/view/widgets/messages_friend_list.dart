@@ -11,6 +11,7 @@ class MessagesFriendList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      itemCount: messages.length,
       itemBuilder: (context, index) {
         return MessageFriend(message: messages[index]);
       },

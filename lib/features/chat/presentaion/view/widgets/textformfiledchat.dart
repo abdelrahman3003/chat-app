@@ -4,8 +4,10 @@ class TextFormfieldChat extends StatelessWidget {
   const TextFormfieldChat({
     super.key,
     required this.onSaved,
+    required this.controller,
   });
   final Function(String?)? onSaved;
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -25,6 +27,7 @@ class TextFormfieldChat extends StatelessWidget {
               ],
             ),
             child: TextFormField(
+              controller: controller,
               onSaved: onSaved,
               decoration: InputDecoration(
                 prefix: const SizedBox(width: 30),

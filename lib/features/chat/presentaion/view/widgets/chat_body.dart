@@ -11,26 +11,16 @@ class ChatBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
-      child: BlocBuilder<ChatCubit, ChatState>(
-        builder: (context, state) {
-          if (state is ChatSucess) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                MessageUserList(messages: state.messageList),
-                MessagesFriendList(messages: state.messageList),
-                const SizedBox(height: 3),
-                const TextFormBody(),
-                const SizedBox(height: 5),
-              ],
-            );
-          }
-          return const CustomcLoadingIndicator();
-        },
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        //   MessageUserList(messages: state.messageList),
+        //  MessagesFriendList(messages: state.messageList),
+        const SizedBox(height: 3),
+        const TextFormBody(),
+        const SizedBox(height: 5),
+      ],
     );
   }
 }

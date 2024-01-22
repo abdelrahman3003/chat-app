@@ -12,6 +12,7 @@ class MessageUserList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      itemCount: messages.length,
       itemBuilder: (context, index) {
         return MessageUser(message: messages[index]);
       },

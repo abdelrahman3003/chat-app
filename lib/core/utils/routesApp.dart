@@ -1,5 +1,6 @@
-import 'package:chat_app1/features/auth/presentarion/manager/chat_cubit/chat_cubit.dart';
 import 'package:chat_app1/features/auth/presentarion/view/signup.dart';
+import 'package:chat_app1/features/chat/data/repo/chat_repo_imp.dart';
+import 'package:chat_app1/features/chat/presentaion/manager/chat/chat_cubit.dart';
 import 'package:chat_app1/features/chat/presentaion/view/chat.dart';
 import 'package:chat_app1/features/onboarding/presentation/view/onboarding.dart';
 import 'package:chat_app1/features/auth/presentarion/view/signin.dart';
@@ -22,13 +23,13 @@ abstract class RoutesApp {
       builder: (context, state) => const Signin(),
     ),
     GoRoute(
-      path: ksignup,
+      path: ksignin,
       builder: (context, state) => const Signup(),
     ),
     GoRoute(
       path: "/",
       builder: (context, state) => BlocProvider(
-        create: (context) => ChatCubit()..getMessage(),
+        create: (context) => ChatCubit(ChatRepoImp()),
         child: const Chat(),
       ),
     ),
