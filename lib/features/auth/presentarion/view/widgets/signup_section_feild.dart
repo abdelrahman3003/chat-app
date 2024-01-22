@@ -1,10 +1,6 @@
-import 'package:chat_app1/core/utils/navigate.dart';
-import 'package:chat_app1/core/utils/routesApp.dart';
-import 'package:chat_app1/features/auth/presentarion/manager/cubit/auth_cubit.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/auth_button.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/authfield.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignupSectionFields extends StatefulWidget {
   const SignupSectionFields({
@@ -54,9 +50,6 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  BlocProvider.of<AuthCubit>(context)
-                      .signup(username, email, password);
-                  navigateToPage(context, RoutesApp.ksignin);
                 }
               },
               text: "Signup")
