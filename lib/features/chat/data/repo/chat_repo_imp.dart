@@ -4,15 +4,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ChatRepoImp implements ChatRepo {
   CollectionReference messages =
-      FirebaseFirestore.instance.collection("messages");
+      FirebaseFirestore.instance.collection("Messages");
   @override
   Future<List<Message>> getMessage() async {
     List<Message> messageList = [];
-    messages.snapshots().listen((event) {
+    messages.orderBy("date", descending: true).snapshots().listen((event) {
       for (var doc in event.docs) {
         messageList.add(Message.fromjson(doc));
       }
     });
+    await Future.delayed(const Duration(seconds: 2));
     return messageList;
   }
 

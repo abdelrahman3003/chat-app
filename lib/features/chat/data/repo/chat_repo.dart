@@ -1,4 +1,6 @@
-class ChatRepo {
+import 'package:chat_app1/features/chat/data/model/message.dart';
+
+abstract class ChatRepo {
   void sendMessage({required String message, required String id}) {}
-  void getMessage() {}
+  Future<List<Message>> getMessage();
 }
