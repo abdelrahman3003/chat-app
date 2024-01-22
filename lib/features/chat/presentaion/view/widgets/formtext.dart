@@ -36,6 +36,7 @@ class _TextFormBodyState extends State<TextFormBody> {
                 formastae.currentState!.save();
                 BlocProvider.of<ChatCubit>(context)
                     .sendMessage(message: text, id: "abdou@gmail.com");
+
                 setState(() {
                   controller.clear();
                   text = '';

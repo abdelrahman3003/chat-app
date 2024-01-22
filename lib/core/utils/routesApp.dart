@@ -1,5 +1,4 @@
 import 'package:chat_app1/features/auth/presentarion/view/signup.dart';
-import 'package:chat_app1/features/chat/data/repo/chat_repo_imp.dart';
 import 'package:chat_app1/features/chat/presentaion/manager/chat/chat_cubit.dart';
 import 'package:chat_app1/features/chat/presentaion/view/chat.dart';
 import 'package:chat_app1/features/onboarding/presentation/view/onboarding.dart';
@@ -29,7 +28,7 @@ abstract class RoutesApp {
     GoRoute(
       path: "/",
       builder: (context, state) => BlocProvider(
-        create: (context) => ChatCubit(ChatRepoImp()),
+        create: (context) => ChatCubit()..getMessage(),
         child: const Chat(),
       ),
     ),

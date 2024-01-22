@@ -7,7 +7,7 @@ class MessageUserList extends StatelessWidget {
     super.key,
     required this.messages,
   });
-  final List<String> messages;
+  final List<Message> messages;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class MessageUserList extends StatelessWidget {
       reverse: true,
       itemCount: messages.length,
       itemBuilder: (context, index) {
-        return MessageUser(message: messages[index]);
+        return MessageUser(message: messages[index].message);
       },
     );
   }

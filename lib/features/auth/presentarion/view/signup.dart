@@ -7,7 +7,10 @@ class Signup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SignupBody(),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: SignupBody(),
+      ),
     );
   }
 }

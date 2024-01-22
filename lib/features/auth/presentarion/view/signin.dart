@@ -7,7 +7,10 @@ class Signin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SigninBody(),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: SigninBody(),
+      ),
     );
   }
 }

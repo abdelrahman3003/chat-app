@@ -1,4 +1,3 @@
-import 'package:chat_app1/features/chat/data/model/message.dart';
 import 'package:chat_app1/features/chat/presentaion/view/widgets/message_friend.dart';
 import 'package:flutter/material.dart';
 

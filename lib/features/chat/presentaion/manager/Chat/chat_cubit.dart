@@ -1,27 +1,25 @@
-import 'package:bloc/bloc.dart';
 import 'package:chat_app1/features/chat/data/model/message.dart';
-import 'package:chat_app1/features/chat/data/repo/chat_repo_imp.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'chat_state.dart';
 
 class ChatCubit extends Cubit<ChatState> {
-  ChatCubit(this.chatRepo) : super(ChatInitial());
-  final ChatRepoImp chatRepo;
+  ChatCubit() : super(ChatInitial());
   CollectionReference messages =
-      FirebaseFirestore.instance.collection("messages");
-
-  sendMessage({required String message, required String id}) {
-    chatRepo.sendMessage(message: message, id: id);
+      FirebaseFirestore.instance.collection("Messages");
+  void sendMessage({required String message, required String id}) async {
+    await messages.add({"message": message, "date": DateTime.now(), 'id': id});
   }
 
-  getMessage() async {
-    var result = await chatRepo.getMessage();
-    emit(ChatSucess(messageList: result));
-  }
+  void getMessage() {
+    messages.orderBy("date", descending: false).snapshots().listen((event) {
+      List<Message> messageList = [];
+      for (var doc in event.docs) {
+        messageList.add(Message.fromjson(doc));
+      }
 
-  clearText(String text) {
-    text = "";
-    emit(ChatClearText());
+      emit(ChatSucess(messageList: messageList));
+    });
   }
 }

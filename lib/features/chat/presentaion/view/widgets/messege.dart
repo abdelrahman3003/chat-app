@@ -1,6 +1,5 @@
 import 'package:chat_app1/constants.dart';
 import 'package:chat_app1/core/utils/styles.dart';
-import 'package:chat_app1/features/chat/data/model/message.dart';
 import 'package:flutter/material.dart';
 
 class MessageUser extends StatelessWidget {
