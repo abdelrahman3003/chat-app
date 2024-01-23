@@ -1,4 +1,3 @@
-import 'package:chat_app1/core/utils/navigate.dart';
 import 'package:chat_app1/core/utils/routesApp.dart';
 import 'package:chat_app1/core/utils/styles.dart';
 import 'package:chat_app1/features/auth/presentarion/manager/signin/signin_cubit.dart';
@@ -49,7 +48,8 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
                   _formKey.currentState!.save();
                   BlocProvider.of<SigninCubit>(context).signin(email, password);
                   if (state is SigninSuccess) {
-                    navigateToPage(context, RoutesApp.kchat);
+                    Navigator.pushNamed(context, RoutesApp.kchat,
+                        arguments: email);
                   }
                 }
               },

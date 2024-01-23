@@ -11,6 +11,9 @@ class AuthRepoImp implements AuthRepo {
       await Future.delayed(const Duration(seconds: 2));
       return Constant.kSucess;
     } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return 'user is not found';
+      }
       if (e.code == 'invalid-credential') {
         return 'Incorrect password or email';
       }
@@ -28,7 +31,6 @@ class AuthRepoImp implements AuthRepo {
         password: password,
       );
       await Future.delayed(const Duration(seconds: 2));
-      return Constant.kSucess;
     } on FirebaseAuthException catch (e) {
       if (e.message == 'Password should be at least 6 characters') {
         return 'Password should be at least 6 characters';

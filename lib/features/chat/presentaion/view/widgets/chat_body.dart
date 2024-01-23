@@ -10,6 +10,7 @@ class ChatBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var id = ModalRoute.of(context)!.settings.arguments as String;
     return BlocBuilder<ChatCubit, ChatState>(
       builder: (context, state) {
         if (state is ChatSucess) {
@@ -18,7 +19,8 @@ class ChatBody extends StatelessWidget {
               : Column(
                   children: [
                     Expanded(
-                      child: MessageUserList(messages: state.messageList),
+                      child:
+                          MessageUserList(messages: state.messageList, id: id),
                     ),
                     const SizedBox(height: 10),
                     const TextFormBody(),
