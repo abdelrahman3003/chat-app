@@ -6,7 +6,7 @@ dynamic navigateToPage(BuildContext context, String page) {
   Future.delayed(
     const Duration(seconds: 2),
     () {
-      GoRouter.of(context).push(page, extra: "");
+      GoRouter.of(context).push(page);
     },
   );
 }

@@ -6,11 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ChatBody extends StatelessWidget {
-  const ChatBody({super.key});
+  const ChatBody({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    var id = ModalRoute.of(context)!.settings.arguments as String;
+    var id = ModalRoute.of(context)!.settings.arguments.toString();
     return BlocBuilder<ChatCubit, ChatState>(
       builder: (context, state) {
         if (state is ChatSucess) {
