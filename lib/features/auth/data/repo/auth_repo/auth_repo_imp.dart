@@ -32,10 +32,14 @@ class AuthRepoImp implements AuthRepo {
       await Future.delayed(const Duration(seconds: 2));
       return Constant.kSucess;
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        return 'The password provided is too weak.';
-      } else if (e.code == 'email-already-in-use') {
-        return 'The account already exists for that email.';
+      if (e.message == 'Password should be at least 6 characters') {
+        return 'Password should be at least 6 characters';
+      }
+      if (e.message == 'The email address is badly formatted.') {
+        return 'The email address is badly formatted.';
+      } else if (e.message ==
+          'The email address is already in use by another account.') {
+        return 'The email address is already in use by another account.';
       }
     } catch (e) {
       return e.toString();
