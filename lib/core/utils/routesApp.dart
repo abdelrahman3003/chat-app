@@ -22,14 +22,14 @@ abstract class RoutesApp {
       builder: (context, state) => const OnBoarding(),
     ),
     GoRoute(
-      path: "/",
+      path: ksignin,
       builder: (context, state) => BlocProvider(
         create: (context) => SigninCubit(AuthRepoImp()),
         child: const Signin(),
       ),
     ),
     GoRoute(
-      path: ksignup,
+      path: "/",
       builder: (context, state) => BlocProvider(
         create: (context) => SignupCubit(AuthRepoImp()),
         child: const Signup(),
