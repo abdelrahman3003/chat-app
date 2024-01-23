@@ -24,7 +24,8 @@ class SignupBody extends StatelessWidget {
           DividerText(),
           IconsMeida(),
           SizedBox(height: 30),
-          SigninNavigate()
+          SigninNavigate(),
+          SizedBox(height: 20),
         ],
       ),
     );
