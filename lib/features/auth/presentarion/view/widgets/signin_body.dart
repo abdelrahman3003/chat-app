@@ -2,6 +2,7 @@ import 'package:chat_app1/features/auth/presentarion/view/widgets/loginsectionfe
 import 'package:chat_app1/features/auth/presentarion/view/widgets/dividertext.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/icons.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/logo.dart';
+import 'package:chat_app1/features/auth/presentarion/view/widgets/signup_naviagte.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/textsection.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +24,7 @@ class SigninBody extends StatelessWidget {
           DividerText(),
           IconsMeida(),
           SizedBox(height: 30),
+          SignupNavigate()
         ],
       ),
     );
