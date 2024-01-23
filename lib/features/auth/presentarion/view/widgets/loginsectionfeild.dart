@@ -43,7 +43,8 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
             const SizedBox(height: 20),
             AuthButton(
               text: "Login",
-              onPressed: () {
+              onPressed: () async {
+                await Future.delayed(const Duration(seconds: 2));
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
                   BlocProvider.of<SigninCubit>(context).signin(email, password);

@@ -12,9 +12,7 @@ class AuthRepoImp implements AuthRepo {
       return Constant.kSucess;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'invalid-credential') {
-        return 'No user found for that email.';
-      } else if (e.code == 'too-many-requests') {
-        return 'Wrong password provided for that user.';
+        return 'Incorrect password or email';
       }
     } catch (e) {
       return e.toString();

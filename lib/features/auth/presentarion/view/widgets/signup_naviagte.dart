@@ -16,7 +16,7 @@ class SignupNavigate extends StatelessWidget {
         const Opacity(
           opacity: .6,
           child: Text(
-            "Don't have an account? ",
+            "Don't have an account ",
             style: Styles.textStyle14,
           ),
         ),
