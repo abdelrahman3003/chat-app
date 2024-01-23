@@ -1,3 +1,4 @@
+import 'package:chat_app1/core/utils/styles.dart';
 import 'package:chat_app1/features/auth/presentarion/manager/signin/signin_cubit.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/auth_button.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/authfield.dart';
@@ -48,7 +49,11 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
               },
             ),
             if (state is SigninLoading) const CircularProgressIndicator(),
-            if (state is SigninFailure) Text(state.errorMessage),
+            if (state is SigninFailure)
+              Text(
+                state.errorMessage,
+                style: Styles.textStyle16.copyWith(color: Colors.red),
+              )
           ]),
         );
       },

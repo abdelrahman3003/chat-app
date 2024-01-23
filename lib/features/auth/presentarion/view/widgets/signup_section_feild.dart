@@ -1,3 +1,4 @@
+import 'package:chat_app1/core/utils/styles.dart';
 import 'package:chat_app1/features/auth/presentarion/manager/signup/signup_cubit.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/auth_button.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/authfield.dart';
@@ -59,8 +60,13 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
                     }
                   },
                   text: "Signup"),
+              const SizedBox(height: 10),
               if (state is SignupLoading) const CircularProgressIndicator(),
-              if (state is SignupFailure) Text(state.errorMessage),
+              if (state is SignupFailure)
+                Text(
+                  state.errorMessage,
+                  style: Styles.textStyle16.copyWith(color: Colors.red),
+                )
             ],
           ),
         );
