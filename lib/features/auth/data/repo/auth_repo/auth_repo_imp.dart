@@ -1,3 +1,4 @@
+import 'package:chat_app1/constants.dart';
 import 'package:chat_app1/features/auth/data/repo/auth_repo/auth_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -8,7 +9,7 @@ class AuthRepoImp implements AuthRepo {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
       await Future.delayed(const Duration(seconds: 2));
-      return "Success";
+      return Constant.kSucess;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         return 'No user found for that email.';
@@ -27,7 +28,7 @@ class AuthRepoImp implements AuthRepo {
         password: password,
       );
       await Future.delayed(const Duration(seconds: 2));
-      return "success";
+      return Constant.kSucess;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         return 'The password provided is too weak.';
