@@ -5,6 +5,7 @@ import 'package:chat_app1/features/auth/presentarion/view/widgets/auth_button.da
 import 'package:chat_app1/features/auth/presentarion/view/widgets/authfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class SignupSectionFields extends StatefulWidget {
   const SignupSectionFields({
@@ -60,8 +61,8 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
                       BlocProvider.of<SignupCubit>(context)
                           .signup(username, email, password);
                       if (state is SignupSucces) {
-                        Navigator.pushNamed(context, RoutesApp.kchat,
-                            arguments: email);
+                        GoRouter.of(context)
+                            .push(RoutesApp.kchat, extra: email);
                       }
                     }
                   },
