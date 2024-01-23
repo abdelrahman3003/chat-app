@@ -1,3 +1,4 @@
+import 'package:chat_app1/constants.dart';
 import 'package:chat_app1/core/utils/navigate.dart';
 import 'package:chat_app1/core/utils/routesApp.dart';
 import 'package:chat_app1/core/utils/styles.dart';
@@ -12,15 +13,20 @@ class SignupNavigate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Text(
-          "Don't have an account ",
-          style: Styles.textStyle16,
+        const Opacity(
+          opacity: .6,
+          child: Text(
+            "Don't have an account? ",
+            style: Styles.textStyle14,
+          ),
         ),
         GestureDetector(
           onTap: () {
             navigateToPage(context, RoutesApp.ksignup);
           },
-          child: const Text("Sign Up", style: Styles.textStyle16),
+          child: Text("SignUp",
+              style:
+                  Styles.textStyle16.copyWith(color: Constant.kprimaryColor2)),
         ),
       ],
     );
