@@ -53,6 +53,7 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
                 }
               },
             ),
+            const SizedBox(height: 20),
             if (state is SigninLoading) const CircularProgressIndicator(),
             if (state is SigninFailure)
               Text(

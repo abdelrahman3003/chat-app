@@ -11,13 +11,15 @@ class AuthRepoImp implements AuthRepo {
       await Future.delayed(const Duration(seconds: 2));
       return Constant.kSucess;
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
+      if (e.code == 'invalid-credential') {
         return 'No user found for that email.';
-      } else if (e.code == 'wrong-password') {
+      } else if (e.code == 'too-many-requests') {
         return 'Wrong password provided for that user.';
       }
+    } catch (e) {
+      return e.toString();
     }
-    return "there was an error try again";
+    return "There was an error try again";
   }
 
   @override
@@ -38,6 +40,6 @@ class AuthRepoImp implements AuthRepo {
     } catch (e) {
       return e.toString();
     }
-    return "there was an error try again";
+    return "There was an error try again";
   }
 }

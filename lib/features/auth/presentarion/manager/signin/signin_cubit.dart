@@ -10,6 +10,7 @@ class SigninCubit extends Cubit<SigninState> {
   final AuthRepo authRepo;
   void signin(String email, String password) async {
     var result = await authRepo.signIn(email, password);
+    emit(SigninLoading());
     if (result == Constant.kSucess) {
       emit(SigninSuccess());
     } else {
