@@ -7,22 +7,25 @@ class MessageUserList extends StatelessWidget {
   const MessageUserList({
     super.key,
     required this.messages,
-    required this.id,
+    required this.email,
   });
   final List<Message> messages;
-  final String id;
+  final String email;
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      reverse: true,
-      itemCount: messages.length,
-      itemBuilder: (context, index) {
-        return messages[index].id == id
-            ? MessageUser(message: messages[index].message)
-            : MessageFriend(
-                message: messages[index].message,
-              );
-      },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 6),
+      child: ListView.builder(
+        reverse: true,
+        itemCount: messages.length,
+        itemBuilder: (context, index) {
+          return messages[index].id == email
+              ? MessageUser(message: messages[index].message)
+              : MessageFriend(
+                  message: messages[index].message,
+                );
+        },
+      ),
     );
   }
 }

@@ -39,7 +39,7 @@ abstract class RoutesApp {
       path: kchat,
       builder: (context, state) => BlocProvider(
         create: (context) => ChatCubit(ChatRepoImp())..getMessage(),
-        child: const Chat(),
+        child: Chat(email: state.extra as String),
       ),
     ),
   ]);

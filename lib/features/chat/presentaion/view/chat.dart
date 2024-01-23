@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 class Chat extends StatelessWidget {
   const Chat({
     super.key,
+    required this.email,
   });
-
+  final String email;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: ChatBody(),
+    return Scaffold(
+      body: ChatBody(email: email),
     );
   }
 }

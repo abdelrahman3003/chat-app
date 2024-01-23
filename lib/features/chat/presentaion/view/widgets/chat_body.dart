@@ -8,11 +8,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ChatBody extends StatelessWidget {
   const ChatBody({
     super.key,
+    required this.email,
   });
-
+  final String email;
   @override
   Widget build(BuildContext context) {
-    var id = ModalRoute.of(context)!.settings.arguments.toString();
     return BlocBuilder<ChatCubit, ChatState>(
       builder: (context, state) {
         if (state is ChatSucess) {
@@ -21,11 +21,11 @@ class ChatBody extends StatelessWidget {
               : Column(
                   children: [
                     Expanded(
-                      child:
-                          MessageUserList(messages: state.messageList, id: id),
+                      child: MessageUserList(
+                          messages: state.messageList, email: email),
                     ),
                     const SizedBox(height: 10),
-                    const TextFormBody(),
+                    TextFormBody(email: email),
                     const SizedBox(height: 5),
                   ],
                 );

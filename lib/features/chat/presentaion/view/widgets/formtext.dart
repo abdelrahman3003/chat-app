@@ -7,8 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class TextFormBody extends StatefulWidget {
   const TextFormBody({
     super.key,
+    required this.email,
   });
-
+  final String email;
   @override
   State<TextFormBody> createState() => _TextFormBodyState();
 }
@@ -35,8 +36,7 @@ class _TextFormBodyState extends State<TextFormBody> {
               onTap: () {
                 formastae.currentState!.save();
                 BlocProvider.of<ChatCubit>(context)
-                    .sendMessage(message: text, id: "abdou@gmail.com");
-
+                    .sendMessage(message: text, id: widget.email);
                 setState(() {
                   controller.clear();
                   text = '';
