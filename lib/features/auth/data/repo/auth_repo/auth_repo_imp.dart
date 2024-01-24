@@ -5,45 +5,33 @@ import 'package:firebase_auth/firebase_auth.dart';
 class AuthRepoImp implements AuthRepo {
   @override
   Future<String> signIn(String email, String password) async {
-    if (FirebaseAuth.instance.isSignInWithEmailLink(email)) {
+    await Future.delayed(const Duration(seconds: 2));
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
       await Future.delayed(const Duration(seconds: 2));
-      try {
-        await FirebaseAuth.instance
-            .signInWithEmailAndPassword(email: email, password: password);
-        await Future.delayed(const Duration(seconds: 2));
-        return Constant.kSucess;
-      } on FirebaseAuthException catch (e) {
-        if (e.code == 'user-not-found') {
-          return 'user is not found';
-        }
-        if (e.code == 'invalid-credential') {
-          return 'Incorrect password or email';
-        }
-      } catch (e) {
-        return e.toString();
+      return Constant.kSucess;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return 'user is not found';
       }
-    } else {
-      return "User is not found";
+      if (e.code == 'invalid-credential') {
+        return 'Incorrect password or email';
+      }
+    } catch (e) {
+      return e.toString();
     }
+
     return "There was an error try again";
   }
 
   @override
   Future<String> signUp(String username, String email, String password) async {
     try {
-      UserCredential userCredential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-
-      await userCredential.user!.sendEmailVerification();
-      await Future.delayed(const Duration(seconds: 2));
-      if (userCredential.user!.emailVerified) {
-        return Constant.kSucess;
-      } else {
-        return "Email not verified. Please check your email.";
-      }
     } on FirebaseAuthException catch (e) {
       if (e.message == 'Password should be at least 6 characters') {
         return 'Password should be at least 6 characters';
