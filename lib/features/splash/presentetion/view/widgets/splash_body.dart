@@ -1,3 +1,5 @@
+import 'package:chat_app1/features/splash/presentetion/view/widgets/splash_logo.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class SplashBody extends StatelessWidget {
@@ -5,6 +7,6 @@ class SplashBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(child: SplashLogo());
   }
 }

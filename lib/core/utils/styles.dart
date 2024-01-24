@@ -12,11 +12,15 @@ abstract class Styles {
   static const textStyle25 = TextStyle(
     fontSize: 25,
     fontWeight: FontWeight.normal,
+    color: CupertinoColors.white,
+    fontFamily: "Pacifico",
   );
   static const textStyle30 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w900,
     letterSpacing: 1.2,
+    color: CupertinoColors.white,
+    fontFamily: "Pacifico",
   );
   static const textStyle14 = TextStyle(
     fontSize: 14,
