@@ -16,9 +16,9 @@ class SignupBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 100),
-          Logo(image: "assets/images/logo/1.PNG"),
-          TextsSections(title: "Welcome!", subtitle: "Create your account"),
+          Logo(),
           SizedBox(height: 25),
+          TextsSections(title: "Welcome!", subtitle: "Create your account"),
           SignupSectionFields(),
           SizedBox(height: 20),
           DividerText(),

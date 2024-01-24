@@ -1,3 +1,5 @@
+import 'package:chat_app1/core/utils/navigate.dart';
+import 'package:chat_app1/core/utils/routesApp.dart';
 import 'package:chat_app1/features/splash/presentetion/view/widgets/splash_logo.dart';
 import 'package:chat_app1/features/splash/presentetion/view/widgets/textAnimatio.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,7 @@ class _SplashBodyState extends State<SplashBody>
   @override
   void initState() {
     animate();
-    // navigateToPage(context, RoutesApp.ksignin);
+    navigateToPage(context, RoutesApp.ksignin);
     super.initState();
   }
 
