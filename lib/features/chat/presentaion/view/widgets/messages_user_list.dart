@@ -17,6 +17,7 @@ class MessageUserList extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 6),
       child: ListView.builder(
         reverse: true,
+        physics: const BouncingScrollPhysics(),
         itemCount: messages.length,
         itemBuilder: (context, index) {
           return messages[index].id == email

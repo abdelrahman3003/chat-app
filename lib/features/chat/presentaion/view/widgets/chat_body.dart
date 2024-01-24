@@ -13,26 +13,27 @@ class ChatBody extends StatelessWidget {
   final String email;
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ChatCubit, ChatState>(
-      builder: (context, state) {
-        if (state is ChatSucess) {
-          return state.messageList.isEmpty
-              ? const Center(child: Text("No Messages"))
-              : Column(
-                  children: [
-                    Expanded(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        BlocBuilder<ChatCubit, ChatState>(
+          builder: (context, state) {
+            if (state is ChatSucess) {
+              return state.messageList.isEmpty
+                  ? const Center(child: Text("No Messages"))
+                  : Expanded(
                       child: MessageUserList(
                           messages: state.messageList, email: email),
-                    ),
-                    const SizedBox(height: 10),
-                    TextFormBody(email: email),
-                    const SizedBox(height: 5),
-                  ],
-                );
-        } else {
-          return const CustomcLoadingIndicator();
-        }
-      },
+                    );
+            } else {
+              return const CustomcLoadingIndicator();
+            }
+          },
+        ),
+        const SizedBox(height: 10),
+        TextFormBody(email: email),
+        const SizedBox(height: 5),
+      ],
     );
   }
 }
