@@ -16,8 +16,9 @@ class SplashLogo extends StatelessWidget {
             width: 1.5,
           )),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          const SizedBox(height: 25),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -31,10 +32,6 @@ class SplashLogo extends StatelessWidget {
               ),
             ],
           ),
-          const Text(
-            "Chat",
-            style: Styles.textStyle25,
-          )
         ],
       ),
     );
