@@ -1,5 +1,3 @@
-import 'package:chat_app1/constants.dart';
-import 'package:chat_app1/features/auth/presentarion/view/widgets/logo.dart';
 import 'package:chat_app1/features/chat/presentaion/view/widgets/chat_logo.dart';
 import 'package:chat_app1/features/chat/presentaion/view/widgets/logout_icon.dart';
 import 'package:flutter/material.dart';
