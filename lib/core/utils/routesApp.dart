@@ -33,7 +33,7 @@ abstract class RoutesApp {
         builder: (context, state) => MultiBlocProvider(providers: [
               BlocProvider(
                 create: (context) {
-                  return SocialSigninCubit(AuthRepoImp())..googleSignin();
+                  return SigninCubit(AuthRepoImp());
                 },
               ),
               BlocProvider(
