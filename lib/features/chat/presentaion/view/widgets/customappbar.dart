@@ -1,5 +1,6 @@
 import 'package:chat_app1/constants.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/logo.dart';
+import 'package:chat_app1/features/chat/presentaion/view/widgets/chat_logo.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppbar extends StatelessWidget {
@@ -8,7 +9,7 @@ class CustomAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 60,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -24,7 +25,9 @@ class CustomAppbar extends StatelessWidget {
         height: 50,
         width: double.infinity,
         child: const Row(
-          children: [],
+          children: [
+            ChatLogo(),
+          ],
         ),
       ),
     );
