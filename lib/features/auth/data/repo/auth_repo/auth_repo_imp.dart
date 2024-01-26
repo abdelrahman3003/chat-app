@@ -9,9 +9,8 @@ class AuthRepoImp implements AuthRepo {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-      await Future.delayed(const Duration(seconds: 2));
-      return Constant.kSucess;
     } on FirebaseAuthException catch (e) {
+      print("============");
       if (e.code == 'user-not-found') {
         return 'user is not found';
       }
@@ -32,6 +31,8 @@ class AuthRepoImp implements AuthRepo {
         email: email,
         password: password,
       );
+
+      return Constant.kSucess;
     } on FirebaseAuthException catch (e) {
       if (e.message == 'Password should be at least 6 characters') {
         return 'Password should be at least 6 characters';

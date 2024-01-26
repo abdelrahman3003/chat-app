@@ -62,7 +62,7 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
                           .signup(username, email, password);
                       if (state is SignupSucces) {
                         GoRouter.of(context)
-                            .push(RoutesApp.kchat, extra: email);
+                            .push(RoutesApp.ksignin, extra: email);
                       }
                     }
                   },

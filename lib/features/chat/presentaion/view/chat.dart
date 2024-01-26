@@ -9,6 +9,7 @@ class Chat extends StatelessWidget {
   final String email;
   @override
   Widget build(BuildContext context) {
+    print("========= email is $email");
     return Scaffold(
       body: ChatBody(email: email),
     );
