@@ -22,7 +22,9 @@ class ChatBody extends StatelessWidget {
           builder: (context, state) {
             if (state is ChatSucess) {
               return state.messageList.isEmpty
-                  ? const Center(child: Text("No Messages"))
+                  ? const Expanded(
+                      child:
+                          SizedBox(child: Center(child: Text("No Messages"))))
                   : Expanded(
                       child: MessageUserList(
                           messages: state.messageList, email: email),

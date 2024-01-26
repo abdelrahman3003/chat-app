@@ -36,7 +36,7 @@ class ChatLogo extends StatelessWidget {
           Text(
             "Chat",
             style: Styles.textStyle25
-                .copyWith(fontSize: 8, color: Constant.kprimaryColor2),
+                .copyWith(fontSize: 10, color: Constant.kprimaryColor2),
           ),
         ],
       ),

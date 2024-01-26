@@ -26,6 +26,7 @@ class CustomAppbar extends StatelessWidget {
         width: double.infinity,
         child: const Row(
           children: [
+            SizedBox(width: 10),
             ChatLogo(),
           ],
         ),
