@@ -1,6 +1,7 @@
 import 'package:chat_app1/features/auth/data/repo/auth_repo/auth_repo_imp.dart';
 import 'package:chat_app1/features/auth/presentarion/manager/signin/signin_cubit.dart';
 import 'package:chat_app1/features/auth/presentarion/manager/signup/signup_cubit.dart';
+import 'package:chat_app1/features/auth/presentarion/manager/social_signin/social_signin_cubit.dart';
 import 'package:chat_app1/features/auth/presentarion/view/signup.dart';
 import 'package:chat_app1/features/chat/data/repo/chat_repo_imp.dart';
 import 'package:chat_app1/features/chat/presentaion/manager/chat/chat_cubit.dart';
@@ -28,12 +29,19 @@ abstract class RoutesApp {
       builder: (context, state) => const OnBoarding(),
     ),
     GoRoute(
-      path: ksignin,
-      builder: (context, state) => BlocProvider(
-        create: (context) => SigninCubit(AuthRepoImp()),
-        child: const Signin(),
-      ),
-    ),
+        path: ksignin,
+        builder: (context, state) => MultiBlocProvider(providers: [
+              BlocProvider(
+                create: (context) {
+                  return SocialSigninCubit(AuthRepoImp())..googleSignin();
+                },
+              ),
+              BlocProvider(
+                create: (context) {
+                  return SocialSigninCubit(AuthRepoImp());
+                },
+              ),
+            ], child: const Signin())),
     GoRoute(
       path: ksignup,
       builder: (context, state) => BlocProvider(

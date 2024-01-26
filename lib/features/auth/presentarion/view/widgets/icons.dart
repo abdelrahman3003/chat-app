@@ -1,5 +1,7 @@
+import 'package:chat_app1/features/auth/presentarion/manager/social_signin/social_signin_cubit.dart';
 import 'package:chat_app1/features/auth/presentarion/view/widgets/iconauth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class IconsMeida extends StatelessWidget {
@@ -7,15 +9,19 @@ class IconsMeida extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        IconAuth(icon: FontAwesomeIcons.facebook),
-        IconAuth(icon: FontAwesomeIcons.google),
-        IconAuth(icon: FontAwesomeIcons.twitter),
+    return BlocBuilder<SocialSigninCubit, SocialSigninState>(
+      builder: (context, state) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconAuth(onTap: () {}, icon: FontAwesomeIcons.facebook),
+            IconAuth(onTap: () {}, icon: FontAwesomeIcons.google),
+            IconAuth(onTap: () {}, icon: FontAwesomeIcons.twitter),
 
-        //  IconAuth(icon: FlutterIcons.twitter_ant,),
-      ],
+            //  IconAuth(icon: FlutterIcons.twitter_ant,),
+          ],
+        );
+      },
     );
   }
 }

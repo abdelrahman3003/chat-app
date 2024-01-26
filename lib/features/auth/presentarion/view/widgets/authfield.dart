@@ -8,10 +8,12 @@ class AuthField extends StatelessWidget {
     required this.text,
     required this.icon,
     required this.onsave,
+    this.onTap,
   });
   final String text;
   final IconData icon;
   final void Function(String?) onsave;
+  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Stack(clipBehavior: Clip.none, children: [
@@ -24,6 +26,7 @@ class AuthField extends StatelessWidget {
         top: -10,
         child: IconAuth(
           icon: icon,
+          onTap: onTap,
         ),
       )
     ]);

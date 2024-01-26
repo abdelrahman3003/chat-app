@@ -8,8 +8,8 @@ part 'social_signin_state.dart';
 class SocialSigninCubit extends Cubit<SocialSigninState> {
   SocialSigninCubit(this.authRepo) : super(SocialSigninInitial());
   final AuthRepo authRepo;
-  void googleSignin(String email, String password) async {
-    var result = await authRepo.signIn(email, password);
+  void googleSignin() async {
+    var result = await authRepo.signinwithgoogle();
     if (result == Constant.kSucess) {
       emit(SocialSigninSuccess());
     } else {
