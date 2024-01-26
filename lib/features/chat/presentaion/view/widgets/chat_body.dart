@@ -1,5 +1,6 @@
 import 'package:chat_app1/core/widgets/customloadingindicatorr.dart';
 import 'package:chat_app1/features/chat/presentaion/manager/chat/chat_cubit.dart';
+import 'package:chat_app1/features/chat/presentaion/view/widgets/customappbar.dart';
 import 'package:chat_app1/features/chat/presentaion/view/widgets/formtext.dart';
 import 'package:chat_app1/features/chat/presentaion/view/widgets/messages_user_list.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class ChatBody extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        const CustomAppbar(),
         BlocBuilder<ChatCubit, ChatState>(
           builder: (context, state) {
             if (state is ChatSucess) {
