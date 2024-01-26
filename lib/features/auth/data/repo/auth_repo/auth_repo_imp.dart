@@ -67,8 +67,8 @@ class AuthRepoImp implements AuthRepo {
     final UserCredential authResult =
         await FirebaseAuth.instance.signInWithCredential(credential);
     if (authResult.user != null) {
-      return Constant.kSucess;
+      return authResult.user!.email;
     }
-    return "user is not found in google";
+    return "erroe";
   }
 }

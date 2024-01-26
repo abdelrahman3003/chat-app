@@ -13,4 +13,8 @@ final class SocialSigninFailure extends SocialSigninState {
   SocialSigninFailure({required this.errorMessage});
 }
 
-final class SocialSigninSuccess extends SocialSigninState {}
+final class SocialSigninSuccess extends SocialSigninState {
+  final String email;
+
+  SocialSigninSuccess({required this.email});
+}

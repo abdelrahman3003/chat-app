@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:chat_app1/constants.dart';
 import 'package:chat_app1/features/auth/data/repo/auth_repo/auth_repo.dart';
 import 'package:meta/meta.dart';
 
@@ -10,11 +9,11 @@ class SocialSigninCubit extends Cubit<SocialSigninState> {
   final AuthRepo authRepo;
   void googleSignin() async {
     var result = await authRepo.signinwithgoogle();
-    if (result == Constant.kSucess) {
-      emit(SocialSigninSuccess());
+    await Future.delayed(const Duration(seconds: 2));
+    if (result == "error") {
+      emit(SocialSigninFailure(errorMessage: "the account is not founf"));
     } else {
-      await Future.delayed(const Duration(seconds: 2));
-      emit(SocialSigninFailure(errorMessage: result));
+      emit(SocialSigninSuccess(email: result));
     }
   }
 }
