@@ -1,6 +1,7 @@
 import 'package:chat_app1/constants.dart';
 import 'package:chat_app1/features/auth/data/repo/auth_repo/auth_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthRepoImp implements AuthRepo {
   @override
@@ -47,5 +48,27 @@ class AuthRepoImp implements AuthRepo {
       return e.toString();
     }
     return "There was an error try again";
+  }
+
+  @override
+  signinwithgoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+    final UserCredential authResult =
+        await FirebaseAuth.instance.signInWithCredential(credential);
+    if (authResult.user != null) {
+      return Constant.kSucess;
+    }
+    return "user is not found in google";
   }
 }

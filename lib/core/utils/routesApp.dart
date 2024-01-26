@@ -20,7 +20,7 @@ abstract class RoutesApp {
 
   static final router = GoRouter(routes: [
     GoRoute(
-      path: ksplash,
+      path: "/",
       builder: (context, state) => const Splash(),
     ),
     GoRoute(
@@ -42,7 +42,7 @@ abstract class RoutesApp {
       ),
     ),
     GoRoute(
-      path: "/",
+      path: kchat,
       builder: (context, state) => BlocProvider(
         create: (context) => ChatCubit(ChatRepoImp())..getMessage(),
         child: Chat(
